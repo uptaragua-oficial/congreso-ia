@@ -49,7 +49,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
         <div className="flex items-center gap-2">
           <CalendarDays className="h-5 w-5" />
-          <span>15 y 16 de julio de 2025</span>
+          <span>Lunes 14, martes 15 y sábado 19 de julio de 2025</span>
         </div>
         <div className="flex items-center gap-2">
           <MapPin className="h-5 w-5" />

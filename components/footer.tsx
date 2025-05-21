@@ -21,6 +21,9 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>Dra. Bettys Muñoz - Rectora de la UPT Aragua FBF</li>
                 <li>Dr. Jimy Santana</li>
+                <li>Prof. Richard Castellanos</li>
+                <li>Prof. Luis Díaz</li>
+                <li>Prof. Edervlanger Vanegas</li>
               </ul>
             </div>
             <div>

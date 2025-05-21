@@ -9,16 +9,17 @@ export default function ProgramaPage() {
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">(En construcción)</h1>
 
         <Tabs defaultValue="dia1" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="dia1">Día 1 - 15 de julio</TabsTrigger>
-            <TabsTrigger value="dia2">Día 2 - 16 de julio</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="dia1">Día 1 - 14 de julio</TabsTrigger>
+            <TabsTrigger value="dia2">Día 2 - 15 de julio</TabsTrigger>
+            <TabsTrigger value="dia3">Día 3 - 19 de julio</TabsTrigger>
           </TabsList>
 
           <TabsContent value="dia1">
             <div className="grid gap-6">
               <Card>
                 <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
-                  <CardTitle>Mañana - 8:00 AM a 12:00 M</CardTitle>
+                  <CardTitle>Sala de Conferencias. Mañana - 8:00 AM a 12:00 M</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-6">
@@ -70,10 +71,25 @@ export default function ProgramaPage() {
                   </div>
                 </CardContent>
               </Card>
+              <Card>
+                  <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
+                    <CardTitle>Sala Temática - Mañana - 8:00 AM a 12:00 M</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-semibold">9:00 AM - 12:00 AM</h3>
+                        <p className="font-medium text-purple-700 dark:text-purple-400">Trabajos de investigación y desarrollo de los estudiantes de postgrado en Informática, mención desarrollo de software, en modelos de lenguaje con IA Generativa</p>
+                        <p className="text-muted-foreground">Expertos en el área</p>
+                      </div>
+                      
+                    </div>
+                  </CardContent>
+                </Card>
 
               <Card>
                 <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
-                  <CardTitle>Tarde - 12:30 PM a 4:00 PM</CardTitle>
+                  <CardTitle>Laboratorios. Tarde - 12:30 PM a 4:00 PM</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-6">
@@ -112,7 +128,7 @@ export default function ProgramaPage() {
             <div className="grid gap-6">
               <Card>
                 <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
-                  <CardTitle>Mañana - 9:00 AM a 12:00 M</CardTitle>
+                  <CardTitle>Sala de Conferencias. Mañana - 9:00 AM a 12:00 M</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-6">
@@ -151,15 +167,40 @@ export default function ProgramaPage() {
                       <p className="font-medium text-purple-700 dark:text-purple-400">
                         Ceremonia de clausura y conclusiones
                       </p>
-                      <p className="text-muted-foreground">Dr. Jimy Santana</p>
+                      <p className="text-muted-foreground">Dra. Bettys Muñoz y Dr. Jimy Santana</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
+              <Card>
+                  <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
+                    <CardTitle>Sala Temática - Mañana - 8:00 AM a 12:00 M</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-semibold">9:00 AM - 9:20 AM</h3>
+                        <p className="font-medium text-purple-700 dark:text-purple-400">Virtualización con herramientas de la IA Generativa</p>
+                        <p className="text-muted-foreground">Experto en el área</p>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold">9:20 AM - 9:40 AM</h3>
+                        <p className="font-medium text-purple-700 dark:text-purple-400">Aplicaciones de la IA Generativa...</p>
+                        <p className="text-muted-foreground">Experto en el área</p>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold">9:40 AM - 12:00 AM</h3>
+                        <p className="font-medium text-purple-700 dark:text-purple-400">Trabajos de investigación y desarrollo de los estudiantes de postgrado en Informática, mención desarrollo de software, en modelos de lenguaje con IA Generativa</p>
+                        <p className="text-muted-foreground">Expertos en el área</p>
+                      </div>
+                      
+                    </div>
+                  </CardContent>
+                </Card>
 
               <Card>
                 <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
-                  <CardTitle>Tarde - 12:30 PM a 4:00 PM</CardTitle>
+                  <CardTitle>Laboratorios. Tarde - 12:30 PM a 4:00 PM</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-6">
@@ -186,6 +227,61 @@ export default function ProgramaPage() {
               </Card>
             </div>
           </TabsContent>
+
+          <TabsContent value="dia3">
+            <div className="grid gap-6">
+              <Card>
+                <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
+                  <CardTitle>Sala de Conferencias. Mañana - 8:30 AM a 12:30 PM</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-lg font-semibold">8:30 AM - 9:00 AM</h3>
+                      <p className="font-medium text-purple-700 dark:text-purple-400">
+                        Panel: "Integración de la universidad con el sector productivo para la adopción y desarrollo de aplicaciones de la IA Generativa, con seguridad, eficiencia, ética y responsabilidad social"
+                      </p>
+                      <p className="text-muted-foreground">Representantes de los sectores</p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg font-semibold">9:00 AM - 9:20 AM</h3>
+                      <p className="font-medium text-purple-700 dark:text-purple-400">
+                        Conferencia: "Integración de la IA Generativa en los planes y programas de estudio de postgrado. Una mirada critica y reflexiva a los procesos de aprendizaje, investigación y desarrollo"
+                      </p>
+                      <p className="text-muted-foreground">Ponente invitado</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">9:20 AM - 9:35 AM</h3>
+                      <p className="font-medium">Sesión de preguntas y respuestas</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">9:35 AM - 9:50 AM</h3>
+                      <p className="font-medium">Receso - Café</p>
+                    </div>
+                                        
+                    <div>
+                      <h3 className="text-lg font-semibold">9:50 AM - 12:00 M</h3>
+                      <p className="font-medium text-purple-700 dark:text-purple-400">
+                        Sesión de pósters: Proyectos universitarios en IA Generativa
+                      </p>
+                      <p className="text-muted-foreground">Área de exposición</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">12:00 AM - 12:30 PM</h3>
+                      <p className="font-medium text-purple-700 dark:text-purple-400">
+                        Ceremonia de clausura y conclusiones
+                      </p>
+                      <p className="text-muted-foreground">Dra. Bettys Muñoz</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              
+            </div>
+          </TabsContent>
+
         </Tabs>
 
         <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg">

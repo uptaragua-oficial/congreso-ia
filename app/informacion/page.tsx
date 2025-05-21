@@ -18,7 +18,7 @@ export default function InformacionPage() {
                     <CalendarDays className="h-5 w-5 text-purple-600 mt-0.5" />
                     <div>
                       <h3 className="font-medium">Fecha</h3>
-                      <p>15 y 16 de julio de 2025</p>
+                      <p>Lunes 14, martes 15 y sábado 19 de julio de 2025</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
