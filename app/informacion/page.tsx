@@ -1,5 +1,6 @@
 import { CalendarDays, MapPin } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BubbleWebhookButton } from "@/app/telegram/BubbleWebhookButton"
 
 export default function InformacionPage() {
   return (
@@ -141,6 +142,7 @@ export default function InformacionPage() {
           {/* Comité */}
           
         </div>
+        <BubbleWebhookButton />
       </div>
     </div>
   )
