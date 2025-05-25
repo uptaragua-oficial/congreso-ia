@@ -2,7 +2,7 @@ import Link from "next/link"
 import { CalendarDays, MapPin, Users, BookOpen, Lightbulb, Network } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Footer } from "@/components/footer"
+import { BubbleWebhookButton } from "@/app/telegram/BubbleWebhookButton"
 
 export default function Home() {
   return (
@@ -286,7 +286,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      
+      <BubbleWebhookButton />
     </div>
   )
 }
