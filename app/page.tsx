@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex-shrink-0">
         <img
           src="/images/logoUPTA.png"
-          alt="Logo UPT Aragua"
+          alt="Logo UPTAragua"
           className="h-24 md:h-28 w-auto"
         />
       </div>
