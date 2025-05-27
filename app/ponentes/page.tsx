@@ -26,7 +26,7 @@ export default function PonentesPage() {
             <CardContent className="text-center">
               <p className="text-sm text-muted-foreground">
                 Experto en Inteligencia Artificial y modelos de lenguaje. Investigador principal en el área de IA
-                Generativa aplicada a la educación.
+                Generativa aplicada a la educación y su adopción.
               </p>
               <div className="flex justify-center gap-2 mt-4">
                 <Badge variant="outline">IA Educativa</Badge>

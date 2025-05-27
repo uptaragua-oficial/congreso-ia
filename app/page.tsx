@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link"
 import { CalendarDays, MapPin, Users, BookOpen, Lightbulb, Network } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -68,6 +69,7 @@ export default function Home() {
     </div>
   </div>
 </header>
+
 
 
       {/* Main Content */}
@@ -286,7 +288,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      
+
     </div>
   )
 }

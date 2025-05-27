@@ -77,6 +77,9 @@ export default function ContactoPage() {
                 Completa el formulario de registro en línea haciendo clic en el botón que aparece a continuación.
               </li>
               <li>
+                La inscripción para los bootcamps se realizará de manera presencial el día lunes 14 de julio, en el registro del congreso.
+              </li>
+              <li>
                 Una vez completado el formulario, recibirás un correo de confirmación con más detalles.
               </li>
             </ol>
