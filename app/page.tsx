@@ -285,7 +285,7 @@ export default function Home() {
         </section>
       </main>
       {/* Footer */}
-    </*BubbleWebhookButton /*/>
+    <BubbleWebhookButton />
     </div>
   )
 }
