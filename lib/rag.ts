@@ -9,7 +9,7 @@ export class RAGProcessor {
   }> = [];
 
   constructor() {
-    const filePath = path.join(process.cwd(), "public", "rag-data.json");
+    const filePath = path.join(process.cwd(), "data", "rag-data.json");
     try {
       const data = fs.readFileSync(filePath, "utf-8");
       this.documents = JSON.parse(data);
