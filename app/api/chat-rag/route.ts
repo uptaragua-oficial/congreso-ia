@@ -17,9 +17,9 @@ export async function POST(req: Request) {
   const { messages, model = "llama3-70b-8192" } = await req.json()
 
 
-const openai = createOpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+  const openai = createOpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
 
 
   const lastMessage = messages[messages.length - 1]?.content || ""
@@ -28,7 +28,7 @@ const openai = createOpenAI({
   let context = ""
   try {
     context = await ragProcessor.findRelevantContext(lastMessage)
-    console.log("🟢 Contexto relevante:", context)
+    //console.log("🟢 Contexto relevante:", context)
   } catch (error) {
     console.error("❌ Error al obtener contexto RAG:", error)
   }
@@ -48,10 +48,6 @@ const openai = createOpenAI({
     ...messages.slice(-1), // Solo la última pregunta del usuario
   ]
 
-    /*console.log("🟡 Resultado final:",  await generateText({
-    model: openai("gpt-3.5-turbo"),
-    messages: promptMessages,
-  }))*/
 
   const { textStream } = await streamText({
     model: openai("gpt-3.5-turbo"),

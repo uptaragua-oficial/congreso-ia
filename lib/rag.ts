@@ -13,7 +13,6 @@ export class RAGProcessor {
     try {
       const data = fs.readFileSync(filePath, "utf-8");
       this.documents = JSON.parse(data);
-      console.log(`✅ Cargados ${this.documents.length} documentos desde rag-data.json`);
     } catch (error) {
       console.error("❌ Error al cargar rag-data.json:", error);
     }
@@ -55,8 +54,6 @@ export class RAGProcessor {
 
   // Busca el contexto más relevante para una pregunta
   async findRelevantContext(question: string, maxResults: number = 3): Promise<string> {
-    console.log('Buscando contexto para pregunta:', question)
-    console.log('Documentos disponibles:', this.documents.length)
 
     if (this.documents.length === 0) {
       throw new Error("No hay documentos procesados")
@@ -64,8 +61,6 @@ export class RAGProcessor {
 
     try {
       const questionVector = await getOpenAIEmbedding(question)
-
-      //console.log('Vector de la pregunta:', questionVector)
 
       const similarities = this.documents.map(doc => ({
         ...doc,
@@ -76,8 +71,7 @@ export class RAGProcessor {
 
       const relevantDocs = similarities.slice(0, maxResults)
 
-      //console.log('Fragmentos relevantes encontrados:', relevantDocs.length)
-      console.log('Similitudes:', relevantDocs.map(d => d.similarity))
+      //console.log('Similitudes:', relevantDocs.map(d => d.similarity))
 
       return relevantDocs.map(doc => doc.text).join("\n\n")
     } catch (error) {
