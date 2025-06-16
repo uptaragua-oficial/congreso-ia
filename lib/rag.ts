@@ -64,7 +64,6 @@ export class RAGProcessor {
     try {
       const questionVector = await getOpenAIEmbedding(question)
 
-      const questionVector = await getOpenAIEmbedding(question)
       console.log("questionVector:", questionVector)
       if (!questionVector) {
          console.error("questionVector es undefined o null después de getOpenAIEmbedding")
