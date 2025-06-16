@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { BubbleWebhookButton } from "@/app/telegram/BubbleWebhookButton"
 
 export default function ProgramaPage() {
   return (
@@ -299,6 +300,7 @@ export default function ProgramaPage() {
             <li>Se otorgarán certificados de participación y asistencia.</li>
           </ul>
         </div>
+        <BubbleWebhookButton />
       </div>
     </div>
   )

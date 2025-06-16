@@ -3,7 +3,7 @@ import Link from "next/link"
 import { CalendarDays, MapPin, Users, BookOpen, Lightbulb, Network } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Footer } from "@/components/footer"
+/*import { BubbleWebhookButton } from "@/app/telegram/BubbleWebhookButton"*/
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <div className="flex-shrink-0">
         <img
           src="/images/logoUPTA.png"
-          alt="Logo UPT Aragua"
+          alt="Logo UPTAragua"
           className="h-24 md:h-28 w-auto"
         />
       </div>
@@ -286,7 +286,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
       {/* Footer */}
 
     </div>
