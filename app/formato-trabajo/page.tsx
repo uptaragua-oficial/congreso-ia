@@ -1,4 +1,3 @@
-import { BubbleWebhookButton } from "@/app/telegram/BubbleWebhookButton";
 
 export default function FormatoTrabajoPage() {
   return (
@@ -113,7 +112,6 @@ export default function FormatoTrabajoPage() {
           </p>
         </div>
       </div>
-      <BubbleWebhookButton />
     </div>
   )
 }
