@@ -10,9 +10,11 @@ export class RAGProcessor {
 
   constructor() {
     const filePath = path.join(process.cwd(), "data", "rag-data.json");
+    console.log("File Path de rag-data.json: ", filePath);
     try {
       const data = fs.readFileSync(filePath, "utf-8");
       this.documents = JSON.parse(data);
+      console.log("documents longitud: ", documents.length);
     } catch (error) {
       console.error("❌ Error al cargar rag-data.json:", error);
     }
