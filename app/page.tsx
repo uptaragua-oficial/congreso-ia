@@ -1,11 +1,15 @@
 "use client";
 import Link from "next/link"
 import { CalendarDays, MapPin, Users, BookOpen, Lightbulb, Network } from "lucide-react"
+
+import React, { useState } from 'react';
+import ChatWidget from "@/components/ChatWidget"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-/*import { BubbleWebhookButton } from "@/app/telegram/BubbleWebhookButton"*/
 
 export default function Home() {
+   
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -46,7 +50,7 @@ export default function Home() {
         Congreso "Desarrollando las Potencialidades y Capacidades del Sector Universitario en Inteligencia
         Artificial Generativa"
       </h1>
-
+      <ChatWidget />
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
         <div className="flex items-center gap-2">
           <CalendarDays className="h-5 w-5" />
@@ -287,7 +291,7 @@ export default function Home() {
         </section>
       </main>
       {/* Footer */}
-
+     
     </div>
   )
 }

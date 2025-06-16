@@ -3,7 +3,6 @@
 import { Mail, MapPin } from "lucide-react"
 import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
-import { BubbleWebhookButton } from "@/app/telegram/BubbleWebhookButton"
 
 export default function ContactoPage() {
   return (
@@ -96,7 +95,6 @@ export default function ContactoPage() {
           </div>
         </div>
 
-        <BubbleWebhookButton />
       </div>
     </div>
   )
