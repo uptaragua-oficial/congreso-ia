@@ -10,9 +10,11 @@ export class RAGProcessor {
 
   constructor() {
     const filePath = path.join(process.cwd(), "data", "rag-data.json");
+    console.log("File Path de rag-data.json: ", filePath);
     try {
       const data = fs.readFileSync(filePath, "utf-8");
       this.documents = JSON.parse(data);
+      console.log("documents longitud: ", documents.length);
     } catch (error) {
       console.error("❌ Error al cargar rag-data.json:", error);
     }
@@ -61,6 +63,18 @@ export class RAGProcessor {
 
     try {
       const questionVector = await getOpenAIEmbedding(question)
+
+      console.log("questionVector:", questionVector)
+      if (!questionVector) {
+         console.error("questionVector es undefined o null después de getOpenAIEmbedding")
+         // Puedes lanzar un error aquí para un manejo más específico
+         throw new Error("No se pudo obtener el embedding de la pregunta.");
+      }
+      // Asegúrate de que es un array o iterable con elementos
+      if (!Array.isArray(questionVector) || questionVector.length === 0) {
+         console.error("questionVector no es un array válido o está vacío:", questionVector);
+         throw new Error("El embedding de la pregunta no es un formato válido.");
+      }
 
       const similarities = this.documents.map(doc => ({
         ...doc,
