@@ -48,12 +48,7 @@ export function Navbar() {
               >
                 Programa
               </Link>
-              <Link
-                href="/ponentes"
-                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                Ponentes
-              </Link>
+              
               <Link
                 href="/contacto"
                 className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800"
