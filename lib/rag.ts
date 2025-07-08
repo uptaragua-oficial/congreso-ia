@@ -14,7 +14,7 @@ export class RAGProcessor {
     try {
       const data = fs.readFileSync(filePath, "utf-8");
       this.documents = JSON.parse(data);
-      console.log("documents longitud: ", documents.length);
+      console.log("documents longitud: ", this.documents.length);
     } catch (error) {
       console.error("❌ Error al cargar rag-data.json:", error);
     }
@@ -64,7 +64,6 @@ export class RAGProcessor {
     try {
       const questionVector = await getOpenAIEmbedding(question)
 
-      console.log("questionVector:", questionVector)
       if (!questionVector) {
          console.error("questionVector es undefined o null después de getOpenAIEmbedding")
          // Puedes lanzar un error aquí para un manejo más específico
