@@ -1,5 +1,14 @@
+"use client";
+
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 // Define una interfaz para la estructura de una actividad
 interface Activity {
@@ -12,18 +21,18 @@ interface Activity {
 
 // Define colores para cada tipo de actividad
 const activityColors: { [key: string]: string } = {
-  'Registro': 'bg-blue-100 dark:bg-blue-900/20', // Suave para registro
-  'Conferencia': 'bg-green-100 dark:bg-green-900/20', // Para conferencias importantes
-  'Panel': 'bg-yellow-100 dark:bg-yellow-900/20', // Para paneles de discusión
-  'Ponencia': 'bg-purple-100 dark:bg-purple-900/20', // Para ponencias individuales
-  'Receso': 'bg-gray-100 dark:bg-gray-800/20', // Neutro para recesos
-  'Bootcamp': 'bg-red-100 dark:bg-red-900/20', // Para actividades prácticas intensivas
-  'Sesión de Preguntas y Respuestas': 'bg-indigo-100 dark:bg-indigo-900/20', // Para Q&A
-  'Póster': 'bg-teal-100 dark:bg-teal-900/20', // Para sesiones de póster
-  'Ceremonia': 'bg-pink-100 dark:bg-pink-900/20', // Para ceremonias
+  'Registro': 'bg-blue-100 dark:bg-blue-900/20',
+  'Conferencia': 'bg-green-100 dark:bg-green-900/20',
+  'Panel': 'bg-yellow-100 dark:bg-yellow-900/20',
+  'Ponencia': 'bg-purple-100 dark:bg-purple-900/20',
+  'Receso': 'bg-gray-100 dark:bg-gray-800/20',
+  'Bootcamp': 'bg-red-100 dark:bg-red-900/20',
+  'Sesión de Preguntas y Respuestas': 'bg-indigo-100 dark:bg-indigo-900/20',
+  'Póster': 'bg-teal-100 dark:bg-teal-900/20',
+  'Ceremonia': 'bg-pink-100 dark:bg-pink-900/20',
 };
 
-// Define iconos para cada tipo de actividad (usando emojis o podrías usar una librería de iconos)
+// Define iconos para cada tipo de actividad
 const activityIcons: { [key: string]: string } = {
   'Registro': '📝',
   'Conferencia': '🎤',
@@ -37,6 +46,27 @@ const activityIcons: { [key: string]: string } = {
 };
 
 export default function ProgramaPage() {
+  // Estado para controlar el día seleccionado y su descripción completa
+  // Se inicializa con el valor del Día 1 con el mensaje adicional
+  const [selectedDayText, setSelectedDayText] = useState('Lunes, 14 de julio de 2025 (Seleccione los otros días para ver su contenido)');
+
+  // Función para manejar el cambio de día
+  const handleDayChange = (value: string) => {
+    switch (value) {
+      case 'dia1':
+        setSelectedDayText('Lunes, 14 de julio de 2025 (Seleccione los otros días para ver su contenido)');
+        break;
+      case 'dia2':
+        setSelectedDayText('Martes, 15 de julio de 2025 (Seleccione los otros días para ver su contenido)');
+        break;
+      case 'dia3':
+        setSelectedDayText('Sábado, 19 de julio de 2025 (Seleccione los otros días para ver su contenido)');
+        break;
+      default:
+        setSelectedDayText('');
+    }
+  };
+
   const day1ActivitiesConferenceRoom: Activity[] = [
     { time: '8:00 AM - 9:00 AM', title: 'Registro de participantes', location: 'Pasillo principal, frente al salón de usos múltiples.', type: 'Registro' },
     { time: '9:00 AM - 9:15 AM', title: 'Ceremonia de apertura', speakers: 'Dra. Bettys Muñoz - Rectora de la Universidad Politécnica Territorial del Estado Aragua “Federico Brito Figueroa”', type: 'Ceremonia' },
@@ -89,7 +119,7 @@ export default function ProgramaPage() {
     { time: '9:00 AM - 9:20 AM', title: 'Conferencia: “La IA una disrupción en la didáctica de la ingeniería”', speakers: 'Prof. Ing. Msc. Andrés Castillo. UPT Aragua', type: 'Conferencia' },
     { time: '9:20 AM - 9:35 AM', title: 'Ponencia: “La Virtualidad: una mirada desde el quehacer pedagógico”', speakers: 'Dr. David Colombo. Universidad Nacional Experimental Simón Rodríguez. UNESR', type: 'Ponencia' },
     { time: '9:35 AM – 9:50 AM', title: 'Ponencia: “La Inteligencia Artificial y la Educación Teológica: Innovación para un Futuro Inclusivo”', speakers: 'Ing. Misael Vargas. Estudiante del Postgrado en Informática de la UPT Aragua', type: 'Ponencia' },
-    { time: '9:50 AM - 10:00 AM', title: 'Sesión de preguntas y respuestas', type: 'Sesión de Preguntas y Respuestas' },
+    { time: '9:50 AM - 10:00 AM', title: 'Sesión de preguntas y respuestas', type: 'Sesión de Preguntas y Preguntas' },
     { time: '10:00 AM - 10:10 AM', title: 'Receso – Café', type: 'Receso' },
     { time: '10:10 AM - 10:25 AM', title: 'Ponencia: “Dentify: Desarrollo de una Aplicación Móvil con Simulación 3D y Asistencia de la IA para la Formación Odontológica”', speakers: 'Ing. Dervin García. Estudiante del Postgrado en Informática de la UPT Aragua', type: 'Ponencia' },
     { time: '10:25 AM - 10:40 AM', title: 'Ponencia: “Potenciando el Aprendizaje: Aula Virtual Inteligente para una Educación Inclusiva y Eficaz a través de la Inteligencia Artificial”', speakers: 'Ing. Gavy Colmenares. Estudiante del Postgrado en Informática de la UPT Aragua.', type: 'Ponencia' },
@@ -130,12 +160,68 @@ export default function ProgramaPage() {
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Programa del Congreso</h1>
         <h2 className="text-xl md:text-2xl font-bold mb-8 text-center">Desarrollando las Potencialidades y Capacidades del Sector Universitario en Inteligencia Artificial Generativa</h2>
 
-        <Tabs defaultValue="dia1" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="dia1">Día 1 - 14 de julio</TabsTrigger>
-            <TabsTrigger value="dia2">Día 2 - 15 de julio</TabsTrigger>
-            <TabsTrigger value="dia3">Día 3 - 19 de julio</TabsTrigger>
-          </TabsList>
+        <Tabs defaultValue="dia1" className="w-full" onValueChange={handleDayChange}>
+          <TooltipProvider delayDuration={300}>
+            {/* Se restauró mb-12 para el TabsList, ya que el div de espacio se encargará */}
+            <TabsList className="grid w-full grid-cols-3 gap-2 mb-12 p-1 rounded-lg shadow-md">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <TabsTrigger
+                    value="dia1"
+                    className="flex flex-col items-center justify-center p-3 text-purple-800 dark:text-purple-200 rounded-md transition-all duration-200 ease-in-out hover:bg-purple-200 dark:hover:bg-purple-800
+                               data-[state=active]:bg-purple-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:ring-2 data-[state=active]:ring-purple-500 data-[state=active]:ring-offset-2"
+                  >
+                    <span className="text-2xl mb-1">📅</span>
+                    <span className="font-semibold text-base">Día 1</span>
+                    <span className="text-sm">Julio 14</span>
+                  </TabsTrigger>
+                </TooltipTrigger>
+                <TooltipContent className="bg-gray-800 text-white px-3 py-1 rounded-md shadow-lg">
+                  <p className="text-sm">Lunes, 14 de julio de 2025</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <TabsTrigger
+                    value="dia2"
+                    className="flex flex-col items-center justify-center p-3 text-purple-800 dark:text-purple-200 rounded-md transition-all duration-200 ease-in-out hover:bg-purple-200 dark:hover:bg-purple-800
+                               data-[state=active]:bg-purple-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:ring-2 data-[state=active]:ring-purple-500 data-[state=active]:ring-offset-2"
+                  >
+                    <span className="text-2xl mb-1">🗓️</span>
+                    <span className="font-semibold text-base">Día 2</span>
+                    <span className="text-sm">Julio 15</span>
+                  </TabsTrigger>
+                </TooltipTrigger>
+                <TooltipContent className="bg-gray-800 text-white px-3 py-1 rounded-md shadow-lg">
+                  <p className="text-sm">Martes, 15 de julio de 2025</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <TabsTrigger
+                    value="dia3"
+                    className="flex flex-col items-center justify-center p-3 text-purple-800 dark:text-purple-200 rounded-md transition-all duration-200 ease-in-out hover:bg-purple-200 dark:hover:bg-purple-800
+                               data-[state=active]:bg-purple-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:ring-2 data-[state=active]:ring-purple-500 data-[state=active]:ring-offset-2"
+                  >
+                    <span className="text-2xl mb-1">📆</span>
+                    <span className="font-semibold text-base">Día 3</span>
+                    <span className="text-sm">Julio 19</span>
+                  </TabsTrigger>
+                </TooltipTrigger>
+                <TooltipContent className="bg-gray-800 text-white px-3 py-1 rounded-md shadow-lg">
+                  <p className="text-sm">Sábado, 19 de julio de 2025</p>
+                </TooltipContent>
+              </Tooltip>
+            </TabsList>
+          </TooltipProvider>
+
+          {/* Div vacío para crear el espacio extra */}
+          <div className="h-8" aria-hidden="true"></div>
+
+          {/* Texto dinámico para mostrar el día actual, en text-lg y color morado */}
+          <h3 className="text-center text-lg font-bold text-purple-700 dark:text-purple-300 mb-6">{selectedDayText}</h3>
 
           <TabsContent value="dia1">
             <div className="grid gap-6">
